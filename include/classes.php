@@ -27,12 +27,15 @@ class admin
 		$ret = $this->query($sql);  
 
 		while($row = $this->fetcharray($ret)) {
-			
-			echo '<div class="efm-col-12 wow fadeInLeft animated">';			
-			echo '<img src="' . URL . '/assets/images/'. $row['image_url'] . '" style="width: 300px;">';			
+			echo '<div class="single_iteam">';
+			echo '<a href="pages/single_page.html">';
+			echo '<img src="assets/images/' . $row['image_url'] .  '" alt="">';
+			echo '</a>';
+			echo '<div class="slider_article">';
+			echo '<h2><a class="slider_tittle" href="pages/single_page.html">' . $row['title'] . '</a></h2>';
+			echo '<p>' . $row['description'] .'</p>';
 			echo '</div>';
-
-			
+			echo '</div>';
 		}
 	}
 
