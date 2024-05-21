@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<?php include './pages/header.php' ?>
+<?php
+    require_once './pages/header.php';
+    require_once './include/common.php';
+?>
 
 <body>
     <div id="preloader">
@@ -37,6 +40,15 @@
                 </div>
             </div>
         </header>
+
+        <!-- <div>
+            <?php
+
+                $admin->getAllNews();
+
+                ?>
+        </div> -->
+
         <section id="navArea">
             <nav class="navbar navbar-inverse" role="navigation">
                 <div class="navbar-header">
@@ -45,6 +57,9 @@
                         <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                     </button>
                 </div>
+
+
+
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav main_nav">
                         <li class="active"><a href="index.html"><span class="fa fa-home desktop-home"></span><span
