@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteRule ^home$ index.php
+RewriteRule ^header$ pages/header.php
+RewriteRule ^common$ include/common.php
+RewriteRule ^details-news$ pages/details-news.php
+RewriteRule ^([a-zA-Z0-9]+)$  pages/details-post.php?postId=$1 [NC,L]
+RewriteRule ^([a-zA-Z0-9]+)$  pages/details-news.php?tabId=$1 [NC,L]
+RewriteRule ^menu$ pages/menu.php
