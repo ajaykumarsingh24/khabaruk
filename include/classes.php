@@ -131,6 +131,32 @@ class admin
 		}
 	}
 
+	function getAllCategory()
+	{
+		$sql = "CALL getAllCategory()";
+		$ret = $this->query($sql);
+
+		while($row = $this->fetcharray($ret)) {
+			echo '<li class="cat-item">';
+			echo '<a href="' .$row['id'] . '" >';
+			echo $row['type'] . '';
+			echo '</a>';
+			echo '<li>';
+		}
+	}
+	function getBindCategoryOption()
+	{
+		$sql = "CALL getAllCategory()";
+		$ret = $this->query($sql);
+
+		while($row = $this->fetcharray($ret)) {
+            
+			echo '<option>';
+			echo $row['type'] . '';
+			echo '</option>';
+		}
+	}
+
 
 	function login($auth)
 	{

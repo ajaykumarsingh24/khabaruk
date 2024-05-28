@@ -439,14 +439,8 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="category">
                                     <ul>
-                                        <li class="cat-item"><a href="#">ऋषिकेश</a></li>
-                                        <li class="cat-item"><a href="#">Fashion</a></li>
-                                        <li class="cat-item"><a href="#">Business</a></li>
-                                        <li class="cat-item"><a href="#">क्राइम</a></li>
-                                        <li class="cat-item"><a href="#">Games</a></li>
-                                        <li class="cat-item"><a href="#">Life &amp; Style</a></li>
-                                        <li class="cat-item"><a href="#">Photography</a></li>
-                                    </ul>
+                                      <?php $admin->getAllCategory(); ?>
+                                     </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="video">
                                     <div class="vide_area">
@@ -509,10 +503,8 @@
                             <h2><span>Category Archive</span></h2>
                             <select class="catgArchive">
                                 <option>Select Category</option>
-                                <option>ऋषिकेश</option>
-                                <option>Sports</option>
-                                <option>क्राइम</option>
-                                <option>Treads</option>
+                                <?php $admin->getBindCategoryOption();
+                                ?>
                             </select>
                         </div>
                         <div class="single_sidebar wow fadeInDown">
