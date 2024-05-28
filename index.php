@@ -64,7 +64,7 @@
                         <div class="latest_post_container">
                             <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
                             <ul class="latest_postnav">
-                                <?php $admin->getLatestPost(); ?>
+                                <?php $admin->getLatestPost(2); ?>
                             </ul>
                             <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
                         </div>
@@ -426,43 +426,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <aside class="right_content">
-                        <div class="single_sidebar">
-                            <h2><span>Popular Post</span></h2>
-                            <ul class="spost_nav">
-                                <li>
-                                    <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                            class="media-left"> <img alt="" src="<?=URL?>/assets/images/post_img1.jpg">
-                                        </a>
-                                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title">
-                                                Aliquam malesuada diam eget turpis varius 1</a> </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                            class="media-left"> <img alt="" src="<?=URL?>/assets/images/post_img2.jpg">
-                                        </a>
-                                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title">
-                                                Aliquam malesuada diam eget turpis varius 2</a> </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                            class="media-left"> <img alt="" src="<?=URL?>/assets/images/post_img1.jpg">
-                                        </a>
-                                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title">
-                                                Aliquam malesuada diam eget turpis varius 3</a> </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                            class="media-left"> <img alt="" src="<?=URL?>/assets/images/post_img2.jpg">
-                                        </a>
-                                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title">
-                                                Aliquam malesuada diam eget turpis varius 4</a> </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                       <?php include 'pages/popular-post.php' ?>
                         <div class="single_sidebar">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active"><a href="#category" aria-controls="home"

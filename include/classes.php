@@ -109,9 +109,8 @@ class admin
 		}
 	}
 
-	function getLatestPost()
+	function getLatestPost($latestNewsCatagory)
 	{
-		$latestNewsCatagory = 2;
 
 		$sql = "CALL getLatestNews(" . $latestNewsCatagory . ")";
 		$ret = $this->query($sql);
@@ -131,6 +130,7 @@ class admin
 			echo '</li>';
 		}
 	}
+
 
 	function login($auth)
 	{
