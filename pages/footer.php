@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="footer_bottom">
-        <p class="copyright">Copyright &copy; <?php echo date('Y') ?> <a href="index.html">NewsFeed</a></p>
+        <p class="copyright">Copyright &copy; <?php echo date('Y') ?> <a href="home">khabaruk</a></p>
         <p class="developer">Developed By Wpfreeware</p>
     </div>
 </footer>

@@ -77,7 +77,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-8">
                     <div class="left_content">
                         <div class="single_post_content">
-                            <h2><span>Business</span></h2>
+                            <h2><span>वायरल-न्यूज</span></h2>
                             <div class="single_post_content_left">
                                 <ul class="business_catgnav  wow fadeInDown">
                                     <li>
@@ -95,42 +95,7 @@
                             </div>
                             <div class="single_post_content_right">
                                 <ul class="spost_nav">
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                class="media-left"> <img alt=""
-                                                    src="<?=URL?>/assets/images/post_img1.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html"
-                                                    class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                class="media-left"> <img alt=""
-                                                    src="<?=URL?>/assets/images/post_img2.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html"
-                                                    class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                class="media-left"> <img alt=""
-                                                    src="<?=URL?>/assets/images/post_img1.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html"
-                                                    class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                class="media-left"> <img alt=""
-                                                    src="<?=URL?>/assets/images/post_img2.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html"
-                                                    class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    <?php $admin->getLatestPost(5); ?>
                                 </ul>
                             </div>
                         </div>
@@ -426,7 +391,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <aside class="right_content">
-                       <?php include 'pages/popular-post.php' ?>
+                        <?php include 'pages/popular-post.php' ?>
                         <div class="single_sidebar">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active"><a href="#category" aria-controls="home"
@@ -439,8 +404,8 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="category">
                                     <ul>
-                                      <?php $admin->getAllCategory(); ?>
-                                     </ul>
+                                        <?php $admin->getAllCategory(); ?>
+                                    </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="video">
                                     <div class="vide_area">

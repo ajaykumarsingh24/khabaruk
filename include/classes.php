@@ -50,8 +50,7 @@ class admin
 			echo '<img src="assets/images/' . $row['large_image_url'] .  '" alt="">';
 			echo '</a>';
 			echo '<div class="slider_article">';
-			echo '<h2><a class="slider_tittle" href="pages/single_page.html">' . $row['title'] . '</a></h2>';
-			echo '<p>' . $row['description'] .'</p>';
+			echo '<h2><a class="slider_tittle" href="pages/single_page.html">' . $row['title'] . '</a></h2>';			
 			echo '</div>';
 			echo '</div>';
 		}

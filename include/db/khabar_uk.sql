@@ -25,17 +25,17 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getAllCategory` ()   SELECT * FROM `tbl_catagory` WHERE 1$$
+CREATE PROCEDURE `getAllCategory` ()   SELECT * FROM `tbl_catagory` WHERE 1$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getAllNews` ()   SELECT * FROM tbl_news WHERE is_active = '1'$$
+CREATE PROCEDURE `getAllNews` ()   SELECT * FROM tbl_news WHERE is_active = '1'$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getLatestNews` (IN `categoryType` INT(11))   SELECT * FROM tbl_news WHERE category = categoryType AND is_active = '1'$$
+CREATE PROCEDURE `getLatestNews` (IN `categoryType` INT(11))   SELECT * FROM tbl_news WHERE category = categoryType AND is_active = '1'$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getMenus` ()   SELECT * FROM tbl_menu WHERE is_active = '1'$$
+CREATE PROCEDURE `getMenus` ()   SELECT * FROM tbl_menu WHERE is_active = '1'$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getMenuTitle` (IN `tabId` INT(11))   SELECT id, title FROM tbl_menu WHERE id = tabId AND is_active = '1'$$
+CREATE PROCEDURE `getMenuTitle` (IN `tabId` INT(11))   SELECT id, title FROM tbl_menu WHERE id = tabId AND is_active = '1'$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getPostDetails` (IN `postId` INT(11))   SELECT * FROM tbl_news WHERE id = postId AND is_active = '1'$$
+CREATE PROCEDURE `getPostDetails` (IN `postId` INT(11))   SELECT * FROM tbl_news WHERE id = postId AND is_active = '1'$$
 
 DELIMITER ;
 
