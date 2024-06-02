@@ -57,34 +57,42 @@
 
                             <div class="social_link">
                                 <ul class="sociallink_nav">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <?php $admin->getPostMediaShare(); ?>
                                 </ul>
                             </div>
                             <div class="related_post">
                                 <h2>Related Post <i class="fa fa-thumbs-o-up"></i></h2>
                                 <ul class="spost_nav wow fadeInDown animated">
+                                    <?php
+                                    $count = 0;
+
+                                    $relatedPostTitleResult = $admin->getRelatedPost($_GET['postId']);
+
+                                    while($row = $admin->fetcharray($relatedPostTitleResult)) {
+                                        
+                                        $count++;
+
+                                        $rowId = $row['id'];
+                                        $imageURL = $row['large_image_url'];
+                                        $newsTitle = $row['title'];
+                                        $newsDiscription = $row['description'];
+                                    ?>
+
                                     <li>
-                                        <div class="media"> <a class="media-left" href="single_page.html"> <img
-                                                    src="<?=URL?>/assets/images/post_img1.jpg" alt=""> </a>
-                                            <div class="media-body"> <a class="catg_title" href="single_page.html">
-                                                    Aliquam malesuada diam eget turpis varius</a> </div>
+                                        <div class="media">
+                                            <a href="<?php echo $rowId ?>" class="media-left">
+                                                <img src="<?=URL?>/assets/images/<?php echo $imageURL ?>" alt="">
+                                            </a>
+                                            <div class="media-body">
+                                                <a href="<?php echo $row['id'] ?>" class="catg_title">
+                                                    <?php echo $newsTitle ?>
+                                                </a>
+                                            </div>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="media"> <a class="media-left" href="single_page.html"> <img
-                                                    src="<?=URL?>/assets/images/post_img2.jpg" alt=""> </a>
-                                            <div class="media-body"> <a class="catg_title" href="single_page.html">
-                                                    Aliquam malesuada diam eget turpis varius</a> </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media"> <a class="media-left" href="single_page.html"> <img
-                                                    src="<?=URL?>/assets/images/post_img1.jpg" alt=""> </a>
-                                            <div class="media-body"> <a class="catg_title" href="single_page.html">
-                                                    Aliquam malesuada diam eget turpis varius</a> </div>
-                                        </div>
-                                    </li>
+                                    <?php
+                                    }
+                                ?>
                                 </ul>
                             </div>
                         </div>
@@ -104,7 +112,7 @@
                     </a> </nav>
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <aside class="right_content">
-                    <?php include 'popular-post.php' ?>
+                        <?php include 'popular-post.php' ?>
                         <div class="single_sidebar">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active"><a href="#category" aria-controls="home"

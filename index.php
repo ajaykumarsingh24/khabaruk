@@ -18,14 +18,12 @@
                     <div class="header_top">
                         <div class="header_top_left">
                             <ul class="top_nav">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="pages/contact.html">Contact</a></li>
+                                <li><a href="home">Home</a></li>
+                                <li><a href="contact">Contact</a></li>
                             </ul>
                         </div>
                         <div class="header_top_right">
-                            <!-- <p >Friday, December 05, 2045</p> -->
-                            <p id="aks"></p>
+                            <p><?php echo date('D') . ', ' . date('M') . ' ' . date('d') . ', '. date('Y') ?></p>
                         </div>
                     </div>
                 </div>
@@ -76,193 +74,11 @@
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-8">
                     <div class="left_content">
-                        <div class="single_post_content">
-                            <h2><span>वायरल-न्यूज</span></h2>
-                            <div class="single_post_content_left">
-                                <ul class="business_catgnav  wow fadeInDown">
-                                    <li>
-                                        <figure class="bsbig_fig"> <a href="pages/single_page.html"
-                                                class="featured_img"> <img alt=""
-                                                    src="<?=URL?>/assets/images/featured_img1.jpg">
-                                                <span class="overlay"></span> </a>
-                                            <figcaption> <a href="pages/single_page.html">Proin rhoncus consequat nisl
-                                                    eu ornare mauris</a> </figcaption>
-                                            <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus,
-                                                egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...</p>
-                                        </figure>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="single_post_content_right">
-                                <ul class="spost_nav">
-                                    <?php $admin->getLatestPost(5); ?>
-                                </ul>
-                            </div>
-                        </div>
+                        <?php include 'pages/viral-news.php' ?>
+
                         <div class="fashion_technology_area">
-                            <div class="fashion">
-                                <div class="single_post_content">
-                                    <h2><span>Fashion</span></h2>
-                                    <ul class="business_catgnav wow fadeInDown">
-                                        <li>
-                                            <figure class="bsbig_fig"> <a href="pages/single_page.html"
-                                                    class="featured_img"> <img alt=""
-                                                        src="<?=URL?>/assets/images/featured_img2.jpg">
-                                                    <span class="overlay"></span> </a>
-                                                <figcaption> <a href="pages/single_page.html">Proin rhoncus consequat
-                                                        nisl eu ornare mauris</a> </figcaption>
-                                                <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus,
-                                                    egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...</p>
-                                            </figure>
-                                        </li>
-                                    </ul>
-                                    <ul class="spost_nav">
-                                        <li>
-                                            <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                    class="media-left"> <img alt=""
-                                                        src="<?=URL?>/assets/images/post_img1.jpg">
-                                                </a>
-                                                <div class="media-body"> <a href="pages/single_page.html"
-                                                        class="catg_title"> Aliquam malesuada diam eget turpis varius
-                                                        1</a> </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                    class="media-left"> <img alt=""
-                                                        src="<?=URL?>/assets/images/post_img2.jpg">
-                                                </a>
-                                                <div class="media-body"> <a href="pages/single_page.html"
-                                                        class="catg_title"> Aliquam malesuada diam eget turpis varius
-                                                        2</a> </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                    class="media-left"> <img alt=""
-                                                        src="<?=URL?>/assets/images/post_img1.jpg">
-                                                </a>
-                                                <div class="media-body"> <a href="pages/single_page.html"
-                                                        class="catg_title"> Aliquam malesuada diam eget turpis varius
-                                                        3</a> </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                    class="media-left"> <img alt=""
-                                                        src="<?=URL?>/assets/images/post_img2.jpg">
-                                                </a>
-                                                <div class="media-body"> <a href="pages/single_page.html"
-                                                        class="catg_title"> Aliquam malesuada diam eget turpis varius
-                                                        4</a> </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="technology">
-                                <div class="single_post_content">
-                                    <h2><span>ऋषिकेश</span></h2>
-                                    <ul class="business_catgnav">
-                                        <li>
-                                            <figure class="bsbig_fig wow fadeInDown"> <a href="pages/single_page.html"
-                                                    class="featured_img"> <img alt=""
-                                                        src="<?=URL?>/assets/images/ModiVisit.jpg">
-                                                    <span class="overlay"></span> </a>
-                                                <figcaption> <a href="pages/single_page.html">प्रधानमंत्री नरेंद्र मोदी
-                                                        की ऋषिकेश में हुई जनसभा, उत्तराखंड के सभी भाजपा प्रत्याशियों के
-                                                        पक्ष में मतदान करने का करा आह्वान</a> </figcaption>
-                                                <p>ऋषिकेश 11 अप्रैल 2024 ।
-                                                    <strong>ऋषिकेश 11अप्रैल। तीर्थ नगरी ऋषिकेश में भारतीय जनता पार्टी
-                                                        द्वारा 19 अप्रैल को होने जा रहे लोकसभा 2024 के चुनाव के मध्य नजर
-                                                        प्रधानमंत्री नरेंद्र मोदी की रैली का शानदार आयोजन किया
-                                                        गया।</strong>
-
-                                        </li>
-                                        <li>
-                                            <figure class="bsbig_fig wow fadeInDown"> <a href="pages/single_page.html"
-                                                    class="featured_img"> <img alt=""
-                                                        src="<?=URL?>/assets/images/featured_img3.jpg">
-                                                    <span class="overlay"></span> </a>
-                                                <figcaption> <a href="pages/single_page.html">उत्तराखंड भाजपा प्रदेश
-                                                        प्रभारी श्री दुष्यंत गौतम ने आशुतोष नगर पर कार्यकर्ताओं से
-                                                        मुलाकात की</a> </figcaption>
-                                                <p>ऋषिकेश 02 अप्रैल 2024 ।
-
-                                                    उत्तराखंड भाजपा प्रदेश प्रभारी श्री दुष्यंत गौतम ने आशुतोष नगर पर
-                                                    कार्यकर्ताओं से मुलाकात की। इस दौरान प्रभारी श्री गौतम ने मंत्री डॉ
-                                                    प्रेमचंद अग्रवाल सहित कार्यकर्ताओं को चुनाव की तैयारियों की जानकारी
-                                                    हासिल की। इसके बाद त्रिवेणी घाट पर गंगा आरती की गई।
-
-                                                    मंगलवार को आशुतोष नगर स्थित कार्यकर्ता अनिता तिवाड़ी के निवास पर
-                                                    मुलाकात के दौरान श्री गौतम ने कहा कि पूरे देश में प्रधानमंत्री श्री
-                                                    मोदी जी का 10 वर्ष का स्वर्णिम कार्यकाल की बातें हो रही है। उन्होंने
-                                                    कहा कि भारतीय जनता पार्टी की झोली में जनता अपना विश्वास जताते हुए
-                                                    400 से अधिक सीटें देगी।
-
-                                                    श्री गौतम जी ने कार्यकर्ताओं से कहा कि हमें अति उत्साही नहीं होना
-                                                    है। हर घर, हर वर्ग, हर समाज से संपर्क साधते हुए श्री मोदी जी के
-                                                    कार्यकाल को जनता के बीच पहुंचना है। प्रभारी श्री गौतम जी ने
-                                                    कार्यकर्ताओं को इस दौरान टिप्स भी दिए।
-
-                                                    इस मौके पर क्षेत्रीय विधायक व मंत्री डॉ प्रेमचंद अग्रवाल ने बताया कि
-                                                    हर बूथ, पन्ना स्तर तथा शक्ति केंद्र के अलावा ऋषिकेश विधानसभा में
-                                                    छोटे से छोटा व बड़े से बड़ा व्यापारियों, डॉक्टर्स, युवा साथी आदि से
-                                                    सम्पर्क साधकर कार्य किया जा रहा है।
-
-                                                    इस मौके पर जिला अध्यक्ष रविन्द्र राणा, जिला उपाध्यक्ष दिनेश सती,
-                                                    जिलाध्यक्ष महिला मोर्चा कविता शाह, मण्डल अध्यक्ष सुमित पंवार, महिला
-                                                    मोर्चा मण्डल अध्यक्ष माधवी गुप्ता, शिव कुमार गौतम, कपिल गुप्ता,
-                                                    संजीव पाल, राजपाल ठाकुर, ललित जिंदल, गुड्डी कालूड़ा, अनिता तिवाड़ी,
-                                                    अरुण जुगलान, शुशीला बिष्ट, अखिलेश मित्तल आदि उपस्थित रहे।</p>
-                                            </figure>
-                                        </li>
-
-                                    </ul>
-                                    <ul class="spost_nav">
-                                        <li>
-                                            <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                    class="media-left"> <img alt=""
-                                                        src="<?=URL?>/assets/images/post_img1.jpg">
-                                                </a>
-                                                <div class="media-body"> <a href="pages/single_page.html"
-                                                        class="catg_title"> Aliquam malesuada diam eget turpis varius
-                                                        1</a> </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                    class="media-left"> <img alt=""
-                                                        src="<?=URL?>/assets/images/post_img2.jpg">
-                                                </a>
-                                                <div class="media-body"> <a href="pages/single_page.html"
-                                                        class="catg_title"> Aliquam malesuada diam eget turpis varius
-                                                        2</a> </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                    class="media-left"> <img alt=""
-                                                        src="<?=URL?>/assets/images/post_img1.jpg">
-                                                </a>
-                                                <div class="media-body"> <a href="pages/single_page.html"
-                                                        class="catg_title"> Aliquam malesuada diam eget turpis varius
-                                                        3</a> </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                    class="media-left"> <img alt=""
-                                                        src="<?=URL?>/assets/images/post_img2.jpg">
-                                                </a>
-                                                <div class="media-body"> <a href="pages/single_page.html"
-                                                        class="catg_title"> Aliquam malesuada diam eget turpis varius
-                                                        4</a> </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <?php include 'pages/uttrakhand-news.php' ?>
+                            <?php include 'pages/rishikesh-news.php' ?>
                         </div>
                         <div class="single_post_content">
                             <h2><span>Photography</span></h2>
@@ -329,64 +145,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="single_post_content">
-                            <h2><span>Games</span></h2>
-                            <div class="single_post_content_left">
-                                <ul class="business_catgnav">
-                                    <li>
-                                        <figure class="bsbig_fig  wow fadeInDown"> <a class="featured_img"
-                                                href="pages/single_page.html"> <img
-                                                    src="<?=URL?>/assets/images/featured_img1.jpg" alt=""> <span
-                                                    class="overlay"></span> </a>
-                                            <figcaption> <a href="pages/single_page.html">Proin rhoncus consequat nisl
-                                                    eu ornare mauris</a> </figcaption>
-                                            <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus,
-                                                egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...</p>
-                                        </figure>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="single_post_content_right">
-                                <ul class="spost_nav">
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                class="media-left"> <img alt=""
-                                                    src="<?=URL?>/assets/images/post_img1.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html"
-                                                    class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                class="media-left"> <img alt=""
-                                                    src="<?=URL?>/assets/images/post_img2.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html"
-                                                    class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                class="media-left"> <img alt=""
-                                                    src="<?=URL?>/assets/images/post_img1.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html"
-                                                    class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html"
-                                                class="media-left"> <img alt=""
-                                                    src="<?=URL?>/assets/images/post_img2.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html"
-                                                    class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+
+                        <?php include 'pages/rajniti-news.php' ?>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
@@ -475,10 +235,11 @@
                         <div class="single_sidebar wow fadeInDown">
                             <h2><span>Links</span></h2>
                             <ul>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Rss Feed</a></li>
-                                <li><a href="#">Login</a></li>
-                                <li><a href="#">Life &amp; Style</a></li>
+                                <?php if(isset($_SESSION['login_user'])): ?>
+                                <li class="last"><a href="news-logout">Logout</a></li>
+                                <?php else: ?>
+                                <li><a href="news-login">Login</a></li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </aside>

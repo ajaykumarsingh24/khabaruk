@@ -3,6 +3,14 @@ RewriteRule ^home$ index.php
 RewriteRule ^header$ pages/header.php
 RewriteRule ^common$ include/common.php
 RewriteRule ^details-news$ pages/details-news.php
+RewriteRule ^viralnews$ pages/viral-news.php
+RewriteRule ^news-login$ pages/login.php
+RewriteRule ^news-logout$ pages/logout.php
+RewriteRule ^news$ pages/news.php
+RewriteRule ^contact-us$ pages/contact.php
 RewriteRule ^([a-zA-Z0-9]+)$  pages/details-post.php?postId=$1 [NC,L]
 RewriteRule ^([a-zA-Z0-9]+)$  pages/details-news.php?tabId=$1 [NC,L]
 RewriteRule ^menu$ pages/menu.php
+
+RewriteRule ^check-login$ include/login_process.php
+RewriteRule ^news-process$ include/news_process.php

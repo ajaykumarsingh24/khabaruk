@@ -15,6 +15,6 @@ if(isset($_POST['login']))
 	{	//failed
 	}
 
-	header("Location: site-login?state=$status");
+	header("Location: news-login?state=$status");
 }    
 ?>

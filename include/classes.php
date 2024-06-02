@@ -12,12 +12,12 @@ class admin
 	{
 		$title = $values["title"];
 		$date = $values["date"];
+		$description = $values["description"];
+		$category = $values["category"];
 
-		$file_1 = $values["file_1"];
-		$file_2 = $values["file_2"];
-		$file_3 = $values["file_3"];
+		$file = $values["file"];
 
-		$newsSql = "CALL addNews('" .  $title . "', '" .  $date . "', '" .  $file_1 . "', '" .  $file_2 . "', '" .  $file_3 . "')";			
+		$newsSql = "CALL addNews('" .  $title . "', '" .  $date . "', '" .  $file . "', '" .  $description . "', $category)";			
 		return $this->query($newsSql);
 	}
 
@@ -79,13 +79,26 @@ class admin
 		}
 	}
 
+
+	function getPostMediaShare()
+	{
+		$sql = "CALL getPostDetails(" . $_GET['postId'] .")";
+		$ret = $this->query($sql);  
+
+		while($row = $this->fetcharray($ret)) {
+			echo '<li><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>';
+			echo '<li><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>';
+			echo '<li><a target="_blank" href="https://api.whatsapp.com/send?text=' .  $row['title'] . '"><i class="fa fa-whatsapp"></i></a></li>';
+		}
+	}
+
 	function getMenuTitle()
 	{
 		$sql = "CALL getMenuTitle(" . $_GET['tabId'] .")";
 		$ret = $this->query($sql);
 
 		while($row = $this->fetcharray($ret)) {
-			echo '<li>';
+		echo '<li>';
 			echo '<a href="' . $row['id'] . '">' . $row['title'] . '</a>';
 			echo '</li>';
 		}
@@ -110,7 +123,6 @@ class admin
 
 	function getLatestPost($latestNewsCatagory)
 	{
-
 		$sql = "CALL getLatestNews(" . $latestNewsCatagory . ")";
 		$ret = $this->query($sql);
 
@@ -130,6 +142,18 @@ class admin
 		}
 	}
 
+	function getViralPost($newsId)
+	{
+		$sql = "CALL getLatestNews(" . $newsId . ")";
+		return $this->query($sql);
+	}
+
+	function getRelatedPost($newsId)
+	{
+		$sql = "CALL getRelatedPost(" . $newsId . ")";
+		return $this->query($sql);
+	}
+
 	function getAllCategory()
 	{
 		$sql = "CALL getAllCategory()";
@@ -137,28 +161,36 @@ class admin
 
 		while($row = $this->fetcharray($ret)) {
 			echo '<li class="cat-item">';
-			echo '<a href="' .$row['id'] . '" >';
-			echo $row['type'] . '';
-			echo '</a>';
-			echo '<li>';
-		}
-	}
-	function getBindCategoryOption()
+				echo '<a href="' .$row['id'] . '">';
+					echo $row['type'] . '';
+					echo '</a>';
+				echo '
+			<li>';
+    	}
+    }
+
+	function getNewsCategory()
 	{
+		$sql = "CALL getAllCategory()";
+		return $this->query($sql);
+    }
+
+    function getBindCategoryOption()
+    {
 		$sql = "CALL getAllCategory()";
 		$ret = $this->query($sql);
 
 		while($row = $this->fetcharray($ret)) {
-            
-			echo '<option>';
+
+		echo '<option>';
 			echo $row['type'] . '';
 			echo '</option>';
 		}
-	}
+    }
 
 
-	function login($auth)
-	{
+    function login($auth)
+    {
 		$sql = "CALL checkUserLogin('" . $auth['user_name'] . "')";
 
 		$ret = $this->query($sql);
@@ -170,59 +202,51 @@ class admin
 
 		$saltPassword = hash_hmac("sha256", $userPass, $saltPass);
 
-
-		if(($row['user_name']==$auth['user_name'] OR $row['email']==$auth['user_name']) && ($row['password']==$saltPassword) &&
-		$num==1 )
+		if(($row['user_name']==$auth['user_name'] OR $row['email']==$auth['user_name']) && ($row['password']==$saltPassword) && $num==1)
 		{
-		$_SESSION['user_id']=$row['id'];
-		$_SESSION['login_user']=$row['user_name'];
-		$_SESSION['login_email']=$row['email'];
+			$_SESSION['user_id']=$row['id'];
+			$_SESSION['login_user']=$row['user_name'];			
 
-		echo "<script>
-		window.location.href = 'news';
-		</script>";
-
-		exit;
+			echo "<script>window.location.href = 'news';</script>";
+			exit;
 		}
 		else
 		{
-		echo "<script>
-		window.location.href = 'site-login?state=failed';
-		</script>";
-		exit;
-		}
-	}
+			echo "<script>window.location.href = 'site-login?state=failed';</script>";
+			exit;
+    	}
+    }
 
-	function dbConnection(){
-	$connect = new connect();
-	return $connect->dbConnect();
-	}
+    function dbConnection(){
+		$connect = new connect();
+		return $connect->dbConnect();
+    }
 
-	function fetcharray($sql)
-	{
-	return mysqli_fetch_array($sql);
-	}
+    function fetcharray($sql)
+    {
+    	return mysqli_fetch_array($sql);
+    }
 
-	function query($sql)
-	{
-	$connect = new connect();
-	return $connect->runQuery($sql);
-	}
+    function query($sql)
+    {
+		$connect = new connect();
+		return $connect->runQuery($sql);
+    }
 
-	function fetchrow($ret)
-	{
-	return mysqli_fetch_row($ret);
-	}
+    function fetchrow($ret)
+    {
+    	return mysqli_fetch_row($ret);
+    }
 
-	function fetchstring($ret)
-	{
-	return mysqli_fetch_assoc($ret);
-	}
+    function fetchstring($ret)
+    {
+    	return mysqli_fetch_assoc($ret);
+    }
 
-	function numrow($ret)
-	{
-	return mysqli_num_rows($ret);
-	}
+    function numrow($ret)
+    {
+    	return mysqli_num_rows($ret);
+    }
 }
 
 ?>

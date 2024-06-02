@@ -17,6 +17,10 @@
                 </li>
 
                 <?php $admin->getMenus(); ?>
+
+                <?php if(isset($_SESSION['login_user'])): ?>
+                <li class="last"><a href="news-logout">Logout</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>

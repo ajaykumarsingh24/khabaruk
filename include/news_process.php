@@ -6,49 +6,27 @@ if(isset($_POST['submitdocumentform']) && !empty($_POST['submitdocumentform'])){
 		$bytes = random_bytes(5);
 		$array['title'] = !empty($_POST['title']) ? $_POST['title'] : '';		
 		$array['date'] = !empty($_POST['date']) ? $_POST['date'] : '';
+		$array['description'] = !empty($_POST['description']) ? $_POST['description'] : '';
+		$array['category'] = !empty($_POST['category']) ? $_POST['category'] : '';
 
-		if(!empty($_FILES['file_1']['name'])){
-			$array['file_1'] = bin2hex($bytes) . 'img1a' . '.jpg';
+		if(!empty($_FILES['file']['name'])){
+			$array['file'] = bin2hex($bytes) . 'img1a' . '.jpg';
 		}
 		else{
-			$array['file_1'] = 'no-img.jpg';
-		}
-
-		if(!empty($_FILES['file_2']['name'])){
-			$array['file_2'] = bin2hex($bytes)  . 'img2b' . '.jpg';
-		}
-		else{
-			$array['file_2'] = 'no-img.jpg';
-		}
-
-		if(!empty($_FILES['file_3']['name'])){
-			$array['file_3'] = bin2hex($bytes)  . 'img3c' . '.jpg';
-		}
-		else{
-			$array['file_3'] = 'no-img.jpg';
-		}
+			$array['file'] = 'no-img.jpg';
+		}		
 
 		$allowed =  array('gif','png' ,'jpg','jpeg','bmp','pdf');
 
-		$img1ext = pathinfo($array['file_1'], PATHINFO_EXTENSION);
-		$img2ext = pathinfo($array['file_2'], PATHINFO_EXTENSION);
-		$img3ext = pathinfo($array['file_3'], PATHINFO_EXTENSION);
+		$img1ext = pathinfo($array['file'], PATHINFO_EXTENSION);
 
-		if(!in_array($img1ext, $allowed) || !in_array($img2ext, $allowed) || !in_array($img3ext, $allowed)) {
+		if(!in_array($img1ext, $allowed)) {
 			$_SESSION['document_upload'] = 'fail';
 			exit;
 		}
 		else{
-			if(!empty($_FILES['file_1']['name'])){
-				move_uploaded_file($_FILES['file_1']['tmp_name'],'../assets/images/news/' . $array['file_1']);
-			}
-
-			if(!empty($_FILES['file_2']['name'])){
-				move_uploaded_file($_FILES['file_2']['tmp_name'],'../assets/images/news/' . $array['file_2']);
-			}
-
-			if(!empty($_FILES['file_3']['name'])){
-				move_uploaded_file($_FILES['file_3']['tmp_name'],'../assets/images/news/' . $array['file_3']);
+			if(!empty($_FILES['file']['name'])){
+				move_uploaded_file($_FILES['file']['tmp_name'],'../assets/images/' . $array['file']);
 			}
 		}		
 
