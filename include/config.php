@@ -1,4 +1,6 @@
 <?php
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8');
 //Site Path
 $sitePath = "localhost/khabaruk.com";
 
@@ -6,7 +8,7 @@ $sitePath = "localhost/khabaruk.com";
 $roothPath = $_SERVER['DOCUMENT_ROOT'];
 
 //Local Root URL
-define('URL','http://localhost/sarif/clients/khabaruk');
+define('URL','http://localhost/khabaruk');
 
 //Server Root URL
 //define('URL','http://khabaruk.com');

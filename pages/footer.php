@@ -11,10 +11,9 @@
                     <h2>Tag</h2>
                     <ul class="tag_nav">
                         <li><a href="#">ऋषिकेश</a></li>
-                        <li><a href="#">Sports</a></li>
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Life &amp; Style</a></li>
+                        <li><a href="#">वायरल-न्यूज</a></li>
+                        <li><a href="#">उत्तराखण्ड</a></li>
+                        <li><a href="#">राजनीति</a></li>
                         <li><a href="#">क्राइम</a></li>
                         <li><a href="#">Photo</a></li>
                         <li><a href="#">Slider</a></li>
@@ -27,10 +26,7 @@
                     <!-- <p>Editor : Ajay Kumar Singh</p> -->
                     <p>Bureau Chief Rishikesh : Pankaj kaushal</p>
                     <address>
-                        H.O. 2nd Floor ,SM Complex,93 Railway Road,Near SBI Bank, Rishikesh(Dehradun) Uttarakhand -
-                        249201,
-                        B.O. Gangapur , Kasturba Tolla, Khudiram Bose PUsa , Samastipur (Bihar) - 848131
-                        Email: khabarkaamki2023@gmail.com
+                        Email: khabarkaamki2023@gmail.com</br>
                         Mob No: +91-9927066991
                         <!-- Fax: 123-546-567 -->
                     </address>
@@ -39,8 +35,8 @@
         </div>
     </div>
     <div class="footer_bottom">
-        <p class="copyright">Copyright &copy; <?php echo date('Y') ?> <a href="home">khabaruk</a></p>
-        <p class="developer">Developed By Wpfreeware</p>
+        <p class="copyright">Copyright &copy; <?php echo date('Y') ?> <a href="home">samacharuk</a></p>
+        <p class="developer">Developed By AKS</p>
     </div>
 </footer>
 </div>
