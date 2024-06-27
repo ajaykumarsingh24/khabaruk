@@ -212,23 +212,23 @@ figure.effect-layla:hover figcaption::after, figure.effect-layla:hover h2, figur
 .pagination > li > a:hover, .pagination > li > a:focus{background-color:#d083cf; color:#fff; border-color:#d083cf}
 .pagination > li:first-child > a, .pagination > li:first-child > span{border-bottom-left-radius:0; border-top-left-radius:0}
 .pagination > li:last-child > a, .pagination > li:last-child > span{border-bottom-right-radius:0; border-top-right-radius:0}
-.single_page{float:left; display:inline; width:100%}
-.single_page > h1{color:#333; font-family:Oswald,arial,Georgia,serif; font-size:30px; line-height:1.4em; margin:10px 0 -10px; padding:0 0 4px; text-transform:uppercase}
+.index{float:left; display:inline; width:100%}
+.index > h1{color:#333; font-family:Oswald,arial,Georgia,serif; font-size:30px; line-height:1.4em; margin:10px 0 -10px; padding:0 0 4px; text-transform:uppercase}
 .post_commentbox{display:inline; float:left; width:100%; border-top:1px solid #ddd; border-bottom:1px solid #ddd; margin-top:20px; padding:5px 0px}
 .post_commentbox a, .post_commentbox span{color:#798992; font-size:11px; margin-right:5px}
 .post_commentbox a > i, .post_commentbox span > i{margin-right:5px}
 .breadcrumb{background-color:#303030; border-radius:0}
 .breadcrumb li a{color:#fff}
-.single_page_content{display:inline; float:left; padding-top:20px; width:100%; border-bottom:1px solid #ddd; padding-bottom:20px}
-.single_page_content > img{max-width:100%; width:320px; height:213px; margin-bottom:15px}
-.single_page_content ul{position:relative; padding-left:25px}
-.single_page_content ul li{line-height:25px}
-.single_page_content ul li:before{content:""; height:5px; left:5px; position:absolute; width:9px; margin-top:8px}
-.single_page_content ul li:hover{opacity:0.75}
-.single_page_content h2{line-height:35px}
-.single_page_content h3{line-height:30px}
-.single_page_content h4{line-height:25px}
-.single_page_content h4{line-height:20px}
+.index_content{display:inline; float:left; padding-top:20px; width:100%; border-bottom:1px solid #ddd; padding-bottom:20px}
+.index_content > img{max-width:100%; width:320px; height:213px; margin-bottom:15px}
+.index_content ul{position:relative; padding-left:25px}
+.index_content ul li{line-height:25px}
+.index_content ul li:before{content:""; height:5px; left:5px; position:absolute; width:9px; margin-top:8px}
+.index_content ul li:hover{opacity:0.75}
+.index_content h2{line-height:35px}
+.index_content h3{line-height:30px}
+.index_content h4{line-height:25px}
+.index_content h4{line-height:20px}
 .social_link{display:inline; float:left; margin-bottom:25px; margin-top:20px; width:100%}
 .sociallink_nav{text-align:center}
 .sociallink_nav li{display:inline-block}
