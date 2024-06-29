@@ -4,15 +4,18 @@ class connect
 	function dbConnect(){
 		$servername = "localhost";
 
-		$username = "root";
-		//$username = "khabarukadminuser";
+		//$username = "root";
+		$username = "samacharukadminuser";
 
-		$password = "";
-		//$password = "s5l8r{g@Fe-5";
+		//$password = "";
+		$password = "P*KTI!mUIFW%";
 
-		$dbname = "khabar_uk";
+		//$dbname = "khabar_uk";
+		$dbname = "samachar_uk";
 
 		$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+		mysqli_set_charset($conn, 'utf8');
 		
 		return $conn;
 
@@ -23,15 +26,18 @@ class connect
 	function runQuery($sql){
 		$servername = "localhost";
 
-		$username = "root";
-		//$username = "khabarukadminuser";
+		//$username = "root";
+		$username = "samacharukadminuser";
 
-		$password = "";
-		//$password = "s5l8r{g@Fe-5";
+		//$password = "";
+		$password = "P*KTI!mUIFW%";
 
-		$dbname = "khabar_uk";
+		//$dbname = "khabar_uk";
+		$dbname = "samachar_uk";
 
 		$conn = mysqli_connect($servername, $username, $password, $dbname);	
+		
+		mysqli_set_charset($conn, 'utf8');
 
 		return mysqli_query($conn, $sql);
 

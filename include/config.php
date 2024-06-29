@@ -1,18 +1,20 @@
 <?php
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
-//Site Path
-$sitePath = "localhost/khabaruk.com";
 
-//Server Root Path
-$roothPath = $_SERVER['DOCUMENT_ROOT'];
+    //Database Charset to use in creating database tables.
+    define('DB_CHARSET', 'utf8');
 
-//Local Root URL
-define('URL','http://localhost/khabaruk');
+    //Site Path
+    $sitePath = "localhost/samacharuk.in";
 
-//Server Root URL
-//define('URL','http://khabaruk.com');
+    //Server Root Path
+    $roothPath = $_SERVER['DOCUMENT_ROOT'];
 
-//Set Default Time Zone
-date_default_timezone_set('Asia/Kolkata');
+    //Local Root URL
+    //define('URL','http://localhost/sarif/clients/samacharuk');
+
+    //Server Root URL
+    define('URL','http://samacharuk.in');
+
+    //Set Default Time Zone
+    date_default_timezone_set('Asia/Kolkata');
 ?>

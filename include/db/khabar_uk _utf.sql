@@ -25,7 +25,7 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `addNews` (IN `newsTitle` VARCHAR(200), IN `newsDate` VARCHAR(50), IN `fileName` VARCHAR(50), IN `newsDescription` TEXT, IN `newsCategory` INT(11))   INSERT INTO tbl_news SET
+CREATE PROCEDURE `addNews` (IN `newsTitle` VARCHAR(200), IN `newsDate` VARCHAR(50), IN `fileName` VARCHAR(50), IN `newsDescription` TEXT, IN `newsCategory` INT(11))   INSERT INTO tbl_news SET
 title = newsTitle,
 date = newsDate,
 description = newsDescription,
@@ -34,21 +34,21 @@ small_image_url = fileName,
 large_image_url = fileName,
 is_active = '1'$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `checkUserLogin` (IN `userName` INT(50))   SELECT * FROM users WHERE user_name = userName$$
+CREATE PROCEDURE `checkUserLogin` (IN `userName` INT(50))   SELECT * FROM users WHERE user_name = userName$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getAllCategory` ()   SELECT * FROM `tbl_catagory` WHERE 1$$
+CREATE PROCEDURE `getAllCategory` ()   SELECT * FROM `tbl_catagory` WHERE 1$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getAllNews` ()   SELECT * FROM tbl_news WHERE is_active = '1'$$
+CREATE PROCEDURE `getAllNews` ()   SELECT * FROM tbl_news WHERE is_active = '1'$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getLatestNews` (IN `categoryType` INT(11))   SELECT * FROM tbl_news WHERE category = categoryType AND is_active = '1'$$
+CREATE PROCEDURE `getLatestNews` (IN `categoryType` INT(11))   SELECT * FROM tbl_news WHERE category = categoryType AND is_active = '1'$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getMenus` ()   SELECT * FROM tbl_menu WHERE url != 'log-out' AND is_active = '1'$$
+CREATE PROCEDURE `getMenus` ()   SELECT * FROM tbl_menu WHERE url != 'log-out' AND is_active = '1'$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getMenuTitle` (IN `tabId` INT(11))   SELECT id, title FROM tbl_menu WHERE id = tabId AND is_active = '1'$$
+CREATE PROCEDURE `getMenuTitle` (IN `tabId` INT(11))   SELECT id, title FROM tbl_menu WHERE id = tabId AND is_active = '1'$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getPostDetails` (IN `postId` INT(11))   SELECT * FROM tbl_news WHERE id = postId AND is_active = '1'$$
+CREATE PROCEDURE `getPostDetails` (IN `postId` INT(11))   SELECT * FROM tbl_news WHERE id = postId AND is_active = '1'$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getRelatedPost` (IN `postId` INT(11))   SELECT * FROM tbl_news WHERE id != postId AND is_active = '1' LIMIT 3$$
+CREATE PROCEDURE `getRelatedPost` (IN `postId` INT(11))   SELECT * FROM tbl_news WHERE id != postId AND is_active = '1' LIMIT 3$$
 
 DELIMITER ;
 
