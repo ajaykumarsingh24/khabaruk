@@ -2,6 +2,7 @@
     <title>समाचार उत्तराखंड</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="<?=URL?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?=URL?>/assets/css/font-awesome.min.css">

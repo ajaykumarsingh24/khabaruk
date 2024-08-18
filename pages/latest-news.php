@@ -7,9 +7,11 @@
                 </ul>
                 <div class="social_area">
                     <ul class="social_nav">
-                        <li class="facebook"><a href="https://www.facebook.com/pankaj.kaushal.92?mibextid=ZbWKwL"></a></li>
-                        
-                        <li class="youtube"><a href="https://www.youtube.com/@pankajkaushal5003"></a></li>
+                        <li class="facebook"><a href="https://www.facebook.com/pankaj.kaushal.92?mibextid=ZbWKwL"
+                                target='_blank'></a></li>
+
+                        <li class="youtube"><a href="https://www.youtube.com/@pankajkaushal5003" target='_blank'></a>
+                        </li>
                     </ul>
                 </div>
             </div>

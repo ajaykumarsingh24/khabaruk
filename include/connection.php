@@ -1,49 +1,15 @@
 <?php
-class connect
-{
-	function dbConnect(){
-		$servername = "localhost";
+	require_once "config.php";
 
-		//$username = "root";
-		$username = "samacharukadminuser";
+	$dbConnection = mysqli_connect("localhost", getDbUserName($_SERVER['HTTP_HOST']), getDbPassword($_SERVER['HTTP_HOST']), getDbName($_SERVER['HTTP_HOST']));
 
-		//$password = "";
-		$password = "P*KTI!mUIFW%";
+	mysqli_set_charset($dbConnection, 'utf8');
 
-		//$dbname = "khabar_uk";
-		$dbname = "samachar_uk";
-
-		$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-		mysqli_set_charset($conn, 'utf8');
-		
-		return $conn;
-
-		//mysqli_close($conn);
+	if (!$dbConnection) {
+		die('I cannot connect to the database because: ' . mysqli_connect_error());
 	}
-	
 
-	function runQuery($sql){
-		$servername = "localhost";
-
-		//$username = "root";
-		$username = "samacharukadminuser";
-
-		//$password = "";
-		$password = "P*KTI!mUIFW%";
-
-		//$dbname = "khabar_uk";
-		$dbname = "samachar_uk";
-
-		$conn = mysqli_connect($servername, $username, $password, $dbname);	
-		
-		mysqli_set_charset($conn, 'utf8');
-
-		return mysqli_query($conn, $sql);
-
-		mysqli_close($conn);
+	if (!mysqli_select_db($dbConnection, getDbName($_SERVER['HTTP_HOST']))){
+		echo "Unable to select the database";
 	}
-}
-
-
 ?>

@@ -1,4 +1,4 @@
-<?php require_once 'connection.php'; 
+<?php
 
 class admin
 {
@@ -217,36 +217,31 @@ class admin
     	}
     }
 
-    function dbConnection(){
-		$connect = new connect();
-		return $connect->dbConnect();
-    }
+	function fetcharray($sql)
+	{
+		return mysqli_fetch_array($sql);
+	}
 
-    function fetcharray($sql)
-    {
-    	return mysqli_fetch_array($sql);
-    }
+	function query($sql)
+	{
+		include "connection.php";
+		return mysqli_query($dbConnection, $sql);	
+	}
 
-    function query($sql)
-    {
-		$connect = new connect();
-		return $connect->runQuery($sql);
-    }
+	function fetchrow($ret)
+	{
+		return mysqli_fetch_row($ret);
+	}
 
-    function fetchrow($ret)
-    {
-    	return mysqli_fetch_row($ret);
-    }
+	function fetchstring($ret)
+	{
+		return mysqli_fetch_assoc($ret);
+	}	
 
-    function fetchstring($ret)
-    {
-    	return mysqli_fetch_assoc($ret);
-    }
-
-    function numrow($ret)
-    {
-    	return mysqli_num_rows($ret);
-    }
+	function numrow($ret)
+	{
+		return mysqli_num_rows($ret);
+	}	
 }
 
 ?>
