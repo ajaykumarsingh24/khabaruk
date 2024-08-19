@@ -18,7 +18,7 @@
                     <div class="header_top">
                         <div class="header_top_left">
                             <ul class="top_nav">
-                                <li><a href="home">Home</a></li>
+                                <li><a href="home">Home New</a></li>
                                 <li><a href="contact">Contact</a></li>
                             </ul>
                         </div>
