@@ -32,6 +32,11 @@
                 <div class="col-lg-10">
                     <textarea type="text" rows="10" cols="1" name="description" class="form-control isrequired"
                         id="description" required></textarea>
+
+                    <script>
+                    // Initialize CKEditor
+                    CKEDITOR.replace('description');
+                    </script>
                 </div>
             </div>
 
